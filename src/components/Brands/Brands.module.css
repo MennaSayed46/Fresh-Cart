@@ -1,0 +1,11 @@
+.brands {
+    /* border: 1px solid gray; */
+    box-shadow: 1px 1px 10px gray;
+    transition: hover,0.2s;
+}
+
+.brands:hover{
+   box-shadow: 1px 1px 10px #4fa750;
+   border: none;
+   transform: scale(1.02);
+}

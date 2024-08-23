@@ -1,0 +1,17 @@
+.product:hover{
+    /* border: 2px solid green; */
+    box-shadow: 0 0px 10px #0bc70e;
+}
+
+.btn{
+    opacity: 0;
+    transform: translateY(100%);
+    transition: transform 0.5s,opacity 0.5s;
+}
+
+.product:hover .btn{
+
+    opacity: 1;
+    transform: translateY(0);
+}
+
