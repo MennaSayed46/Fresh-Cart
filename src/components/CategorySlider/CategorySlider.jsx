@@ -31,13 +31,13 @@ export default function CategorySlider() {
 
   return (
     <>
-      <Slider {...settings}>
+      <Slider {...settings} >
 
 
         {category.map((category, index) => (<>
-          <div key={index}>
-            <img src={category.image} alt={`image-${index}`} className='w-full pt-4 h-[400px] object-cover my-4 sm:px-4 md:px-2 xl:px-0' />
-            <p className='pb-4 text-2xl sm:px-4 md:px-2 xl:px-0 text-black text-center font-semibold w-full'>{category.name}</p>
+          <div key={index}  >
+            <img src={category.image} alt={`image-${index}`} className='w-full  pt-4 h-[400px] object-cover my-4 sm:px-4 md:px-2 xl:px-0' />
+            <p className=' pb-4 text-2xl sm:px-4 md:px-2 xl:px-0 text-black text-center font-semibold w-full'>{category.name}</p>
           </div>
 
 

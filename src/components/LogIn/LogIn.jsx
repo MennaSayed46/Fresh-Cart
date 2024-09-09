@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import style from './LogIn.module.css'
 import React, { useContext, useState } from 'react'
 import axios from 'axios';
@@ -57,7 +57,7 @@ export default function LogIn() {
   return (
     <>
       <form onSubmit={formik.handleSubmit} className="max-w-md h-screen flex flex-col items-center justify-center mx-auto ">
-        <p className= 'pb-14 text-2xl font-semibold'> Log in your account</p>
+        <p className='pb-14 text-2xl font-semibold'> Log in your account</p>
         {APIERR && <div className='text-center text-red-600 font-semibold'>{APIERR}</div>}
 
 
@@ -73,6 +73,15 @@ export default function LogIn() {
           <label htmlFor="password" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-green-600 peer-focus:dark:text-green-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
           {formik.touched.password && formik.errors.password ? <div className="text-red-500">{formik.errors.password}</div> : null}
         </div>
+
+        <div className='mb-4'> 
+
+          <p className="text-center">Don't have account? <Link className="text-green-600 font-medium underline" to="/register">Register</Link></p>
+          <p className="text-center">Forget Password ? <Link className="text-green-600 font-medium underline" to="/forget">Tap here</Link></p>
+
+        </div>
+
+
 
 
         {loadingSpinner ? <button type='submit' className='bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 rounded-lg text-sm  sm:w-auto px-5 py-3 px-6 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800'><i className="fa-solid fa-spinner fa-pulse"></i></button> : <button type='submit' className='bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 rounded-lg text-xl  sm:w-auto py-3 px-6 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800'>Submit</button>}

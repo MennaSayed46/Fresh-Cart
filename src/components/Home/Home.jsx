@@ -28,22 +28,32 @@ export default function Home() {
 
 
 
-  function getproducts(){
+  function getproducts() {
     return axios.get(`https://ecommerce.routemisr.com/api/v1/products`);
 
   };
 
-  let {data,isFetching,isLoading,isError}=useQuery({
+  let { data, isFetching, isLoading, isError } = useQuery({
     queryKey: ['recentproducts'],
-    queryFn:getproducts,
-   refetchOnMount:false
+    queryFn: getproducts,
+    refetchOnMount: false
   });
+
+
+  // let [products,setProducts]=useState([]);
+  // setProducts(data.data);
   
+  
+ 
+ 
+
+
   return (
     <>
       <MainSlider />
       <CategorySlider />
-      {!isLoading? <div className="mx-auto my-5">
+   
+      {!isLoading ? <div className="mx-auto my-5">
         <div className="flex flex-wrap justify-center items-center ">
           {data.data.data.map((product, index) =>
             <RecentProducts key={index} product={product} />

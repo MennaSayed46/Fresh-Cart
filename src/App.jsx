@@ -1,6 +1,6 @@
 
 import './App.css'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, createHashRouter, RouterProvider } from 'react-router-dom';
 import UserContextProvider from './components/Context/UserContext';
 import Layout from './components/Layout/Layout';
 import Home from './components/Home/Home';
@@ -19,10 +19,13 @@ import { Toaster } from 'react-hot-toast';
 import WishList from './components/WishList/WishList';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import CheckOut from './components/CheckOut/CheckOut';
+import Forget from './components/Forget/Forget';
+import Reset from './components/Reset/Reset';
+import NewPass from './components/NewPass/NewPass';
 
 function App() {
   let query = new QueryClient();
-  let router = createBrowserRouter([
+  let router = createHashRouter([
     {
       path: '/', element: <Layout />, children: [
         { index: true, element: <ProtectedRoute><Home /></ProtectedRoute> },
@@ -34,6 +37,11 @@ function App() {
         { path: 'brands', element: <ProtectedRoute><Brands /></ProtectedRoute> },
         { path: 'categories', element: <ProtectedRoute><Categories /></ProtectedRoute> },
         { path: 'wishlist', element: <ProtectedRoute><WishList /></ProtectedRoute> },
+
+        { path: 'forget', element: <Forget /> },
+        { path: 'reset', element: <Reset/> },
+        { path: 'newPass', element: <NewPass/> },
+        
         { path: 'login', element: <LogIn /> },
         { path: 'productdetails/:id', element: <ProtectedRoute><ProductDetails /></ProtectedRoute> },
         { path: 'home/productdetails/:id', element: <ProtectedRoute><ProductDetails /></ProtectedRoute> },

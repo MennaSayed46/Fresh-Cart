@@ -19,12 +19,12 @@ export default function MainSlider() {
   return (
     <>
 
-      <div className="w-[95%] mx-auto flex mt-8">
+      <div className="w-[95%] mx-auto flex mt-8 ">
         <div className='w-5/6'>
           <Slider {...settings}>
-            <img src={slide1} className='w-full h-[400px]' alt="img of slide1" />
-            <img src={slide2} className='w-full  h-[400px]' alt="img of slide2" />
-            <img src={slide3} className='w-full  h-[400px]' alt="img of slide3" />
+            <img src={slide1} className='w-full h-[400px] ' alt="img of slide1" />
+            <img src={slide2} className='w-full  h-[400px] ' alt="img of slide2" />
+            <img src={slide3} className='w-full  h-[400px] ' alt="img of slide3" />
 
           </Slider>
 

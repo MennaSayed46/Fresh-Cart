@@ -30,6 +30,8 @@ export default function RecentProducts({ product }) {
   }
   return (
     <>
+
+    
       <div className={`md:w-1/6 mx-4 my-2 sm:w-1/3 space-y-6 p-4 rounded-md relative ${style.product}`}>
         <Link to={`productdetails/${product.id}`}>
           <div>
