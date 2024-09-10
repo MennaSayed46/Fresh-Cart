@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { CartContext } from '../Context/CartContext'
+import { CartContext } from '../../Context/CartContext'
 import Loading from '../Loading/Loading';
 import style from './Cart.module.css'
 import React, { useContext, useEffect, useState } from 'react'
@@ -7,16 +7,16 @@ import React, { useContext, useEffect, useState } from 'react'
 export default function Cart() {
   let { deleteProduct, getCartItems, updatePorductCount } = useContext(CartContext);
   let [cart, setCart] = useState(null);
-  let {cartItems}=useContext(CartContext);
-  let {clearCart}=useContext(CartContext);
-  let {addToWishList}=useContext(CartContext);
+  let { cartItems } = useContext(CartContext);
+  let { clearCart } = useContext(CartContext);
+  let { addToWishList } = useContext(CartContext);
 
   //add to wishlist function
 
   async function deleteProductFromCart(productId) {
     let response = await deleteProduct(productId);
     setCart(response.data);
- 
+
 
   }
 
@@ -29,12 +29,12 @@ export default function Cart() {
     let response = await clearCart();
     console.log('response of clearcartitems function', response.data);
     setCart(response.data);
- 
+
 
 
   }
 
-  
+
 
 
   //function of getCart
@@ -42,7 +42,7 @@ export default function Cart() {
     let response = await getCartItems();
     console.log('response of getcart function', response.data);
     setCart(response.data);
- 
+
 
 
   }
@@ -57,9 +57,9 @@ export default function Cart() {
     if (Count > 1 || Count == 1) {
       let response = await updatePorductCount(productId, Count);
       setCart(response.data);
-      console.log('response is',response);
-     
-      
+      console.log('response is', response);
+
+
     } else {
       deleteProductFromCart(productId);
     }
@@ -71,12 +71,12 @@ export default function Cart() {
   async function deleteProductFromCart(productId) {
     let response = await deleteProduct(productId);
     setCart(response.data);
- 
+
 
   }
 
 
-  
+
 
 
 
@@ -84,7 +84,7 @@ export default function Cart() {
     <>
       {cart ? <div className="relative overflow-x-auto shadow-md sm:rounded-lg mt-6 w-5/6 mx-auto">
         <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-          
+
 
           {cart?.products.map((product, index) => {
 
@@ -146,13 +146,13 @@ export default function Cart() {
 
           <div className="flex justify-between p-4">
             <p className='totalOfPrice text-2xl capitalize font-bold'>total price: <span className='text-[#4fa750]'>{cart.totalCartPrice}</span></p>
-            <p className='totalOfPrice text-2xl capitalize font-bold'>total items: <span className='text-[#4fa750]'>{ cartItems.numOfCartItems}</span></p>
-           
+            <p className='totalOfPrice text-2xl capitalize font-bold'>total items: <span className='text-[#4fa750]'>{cartItems.numOfCartItems}</span></p>
+
           </div>
           <hr />
 
           <div className="flex justify-center items-center p-10">
-          <button onClick={()=>clearCartItems()} className={`${style.clearYourCart } border-[#4fa750] rounded-md text-center py-3 px-4 text-xl font-medium `}> Clear Your Cart</button>
+            <button onClick={() => clearCartItems()} className={`${style.clearYourCart} border-[#4fa750] rounded-md text-center py-3 px-4 text-xl font-medium `}> Clear Your Cart</button>
 
 
 

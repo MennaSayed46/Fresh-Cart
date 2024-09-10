@@ -4,7 +4,7 @@ import React, { useContext, useState } from 'react'
 import axios from 'axios';
 import * as yup from 'yup'
 import { Formik, useFormik } from 'formik';
-import { UserContext } from '../Context/UserContext';
+import { UserContext } from '../../Context/UserContext';
 
 
 
@@ -74,7 +74,7 @@ export default function LogIn() {
           {formik.touched.password && formik.errors.password ? <div className="text-red-500">{formik.errors.password}</div> : null}
         </div>
 
-        <div className='mb-4'> 
+        <div className='mb-4'>
 
           <p className="text-center">Don't have account? <Link className="text-green-600 font-medium underline" to="/register">Register</Link></p>
           <p className="text-center">Forget Password ? <Link className="text-green-600 font-medium underline" to="/forget">Tap here</Link></p>

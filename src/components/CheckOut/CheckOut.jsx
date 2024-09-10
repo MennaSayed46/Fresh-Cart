@@ -2,9 +2,9 @@ import { useNavigate } from 'react-router-dom';
 import style from './CheckOut.module.css'
 import React, { useContext, useState } from 'react'
 import axios from 'axios';
-import { UserContext } from '../Context/UserContext';
+import { UserContext } from '../../Context/UserContext';
 import { useFormik } from 'formik';
-import { CartContext } from '../Context/CartContext';
+import { CartContext } from '../../Context/CartContext';
 
 export default function CheckOut() {
 

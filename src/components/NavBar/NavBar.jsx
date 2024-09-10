@@ -2,13 +2,13 @@ import style from './NavBar.module.css'
 import React, { useContext } from 'react'
 import logoSrc from '../../assets/freshcart-logo.svg'
 import { NavLink, useNavigate } from 'react-router-dom'
-import { UserContext } from '../Context/UserContext'
-import { CartContext } from '../Context/CartContext'
+import { UserContext } from '../../Context/UserContext'
+import { CartContext } from '../../Context/CartContext'
 export default function NavBar() {
   let { UserData, setUserData } = useContext(UserContext);
-  let {cartItems}=useContext(CartContext);
-  console.log('cartitems',cartItems);
-  
+  let { cartItems } = useContext(CartContext);
+  console.log('cartitems', cartItems);
+
   let navigate = useNavigate();
 
   function LogOut() {
@@ -51,8 +51,8 @@ export default function NavBar() {
 
 
               <li className='relative'>
-              <NavLink to={`/cart`}><i className="fa-solid fa-cart-shopping text-[#4fa750] text-4xl"></i></NavLink>
-              <span className={`absolute top-[-5px] right-[8px] font-sm text-white text-xl font-semibold`}>{cartItems?.numOfCartItems}</span>
+                <NavLink to={`/cart`}><i className="fa-solid fa-cart-shopping text-[#4fa750] text-4xl"></i></NavLink>
+                <span className={`absolute top-[-5px] right-[8px] font-sm text-white text-xl font-semibold`}>{cartItems?.numOfCartItems}</span>
               </li>
 
 

@@ -1,7 +1,7 @@
 
 import './App.css'
 import { createBrowserRouter, createHashRouter, RouterProvider } from 'react-router-dom';
-import UserContextProvider from './components/Context/UserContext';
+import UserContextProvider from './Context/UserContext';
 import Layout from './components/Layout/Layout';
 import Home from './components/Home/Home';
 import Register from './components/Register/Register';
@@ -14,7 +14,7 @@ import Categories from './components/Categories/Categories';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import ProductDetails from './components/ProductDetails/ProductDetails';
 import Products from './components/Products/Products';
-import CartContextProvider from './components/Context/CartContext';
+import CartContextProvider from './Context/CartContext';
 import { Toaster } from 'react-hot-toast';
 import WishList from './components/WishList/WishList';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -33,15 +33,15 @@ function App() {
         { path: 'register', element: <Register /> },
         { path: 'products', element: <ProtectedRoute><Products /></ProtectedRoute> },
         { path: 'cart', element: <ProtectedRoute><Cart /></ProtectedRoute> },
-        { path: 'checkout', element: <ProtectedRoute><CheckOut/></ProtectedRoute> },
+        { path: 'checkout', element: <ProtectedRoute><CheckOut /></ProtectedRoute> },
         { path: 'brands', element: <ProtectedRoute><Brands /></ProtectedRoute> },
         { path: 'categories', element: <ProtectedRoute><Categories /></ProtectedRoute> },
         { path: 'wishlist', element: <ProtectedRoute><WishList /></ProtectedRoute> },
 
         { path: 'forget', element: <Forget /> },
-        { path: 'reset', element: <Reset/> },
-        { path: 'newPass', element: <NewPass/> },
-        
+        { path: 'reset', element: <Reset /> },
+        { path: 'newPass', element: <NewPass /> },
+
         { path: 'login', element: <LogIn /> },
         { path: 'productdetails/:id', element: <ProtectedRoute><ProductDetails /></ProtectedRoute> },
         { path: 'home/productdetails/:id', element: <ProtectedRoute><ProductDetails /></ProtectedRoute> },

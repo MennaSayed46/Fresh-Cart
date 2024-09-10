@@ -5,7 +5,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import Slider from 'react-slick';
 import Loading from '../Loading/Loading';
-import { CartContext } from '../Context/CartContext';
+import { CartContext } from '../../Context/CartContext';
 
 export default function ProductDetails() {
   let { AddToCart } = useContext(CartContext);
@@ -54,7 +54,7 @@ export default function ProductDetails() {
           <p className="my-6 text-gray-500">{product && product.description}</p>
           <p className="text-gray-800">{product && product.category.name}</p>
           <p className="my-2 text-gray-800">{product && product.price} EGP</p>
-          <button onClick={()=>AddToCart(product.id)} className={`bg-green-700 rounded-md w-full text-center text-white  ${style.btn}`}>Add to cart</button>
+          <button onClick={() => AddToCart(product.id)} className={`bg-green-700 rounded-md w-full text-center text-white  ${style.btn}`}>Add to cart</button>
 
 
 
