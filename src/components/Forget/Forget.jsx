@@ -18,10 +18,10 @@ export default function Forget() {
     let navigate = useNavigate();
 
 
-    async function handleForget(formValues) {
+    async function handleForget(values) {
         try {
             setIsLoading(true)
-            let { data } = await axios.post(`https://ecommerce.routemisr.com/api/v1/auth/forgotPasswords`, formValues)
+            let { data } = await axios.post(`https://ecommerce.routemisr.com/api/v1/auth/forgotPasswords`, values)
             console.log(data);
             
             if(data.statusMsg === 'success'){
